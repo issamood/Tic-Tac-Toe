@@ -1,0 +1,37 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: bisque;
+}
+
+.gameBoardContainer{
+    display: grid;
+    gap: 5px;
+    background-color: black;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.tile{
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+}
+
+.xMark::after{
+    content: '\274C';
+    font-size: 15rem;
+}
+
+.oMark::after{
+    content:'\25EF';
+    font-size: 15rem;
+}
+
+#playerForm {
+    display: flex;
+    flex-direction: column;
+}
