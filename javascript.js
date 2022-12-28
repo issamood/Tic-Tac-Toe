@@ -17,7 +17,24 @@ function updatePlayerName(){
     console.log(oPlayer.name);
 }
 
-
+function whichWinner(marker){
+    if (marker == 'x'){
+        if (xPlayer.name == ''){
+            alert('X wins!');
+        }
+        else {
+            alert(xPlayer.name + ' wins!');
+        }
+    }
+    else if (marker == 'o'){
+        if (oPlayer.name == ''){
+            alert('O wins!');
+        }
+        else {
+            alert(oPlayer.name + ' wins!');
+        }
+    }
+}
 
 //Update gameboard array and ui
 function markBoard (tile, marker){
@@ -27,80 +44,40 @@ function markBoard (tile, marker){
     //Check win
     if (gameBoard[0] == 'x' || gameBoard[0] == 'o'){
         if (gameBoard[0] == gameBoard[1] && gameBoard[0] == gameBoard[2]){
-            if (gameBoard[0] == 'x'){
-                alert(xPlayer.name + ' wins!');
-            }
-            else if (gameBoard[0] == 'o'){
-                alert(oPlayer.name + ' wins!');
-            }
+            whichWinner(gameBoard[0]);
         }
         else if (gameBoard[0] == gameBoard[3] && gameBoard[0] == gameBoard[6]){
-            if (gameBoard[0] == 'x'){
-                alert(xPlayer.name + ' wins!');
-            }
-            else if (gameBoard[0] == 'o'){
-                alert(oPlayer.name + ' wins!');
-            }
+            whichWinner(gameBoard[0]);
         }
         else if (gameBoard[0] == gameBoard[4] && gameBoard[0] == gameBoard[8]){
-            if (gameBoard[0] == 'x'){
-                alert(xPlayer.name + ' wins!');
-            }
-            else if (gameBoard[0] == 'o'){
-                alert(oPlayer.name + ' wins!');
-            }
+            whichWinner(gameBoard[0]);
         }
     }
 
     if (gameBoard[1] == 'x' || gameBoard[1] == 'o'){
         if (gameBoard[1] == gameBoard[4] && gameBoard[1] == gameBoard[7]){
-            if (gameBoard[1] == 'x'){
-                alert(xPlayer.name + ' wins!');
-            }
-            else if (gameBoard[1] == 'o'){
-                alert(oPlayer.name + ' wins!');
-            }
+            whichWinner(gameBoard[1]);
         }
     }
 
     if (gameBoard[2] == 'x' || gameBoard[2] == 'o'){
         if (gameBoard[2] == gameBoard[5] && gameBoard[2] == gameBoard[8]){
-            if (gameBoard[2] == 'x'){
-                alert(xPlayer.name + ' wins!');
-            }
-            else if (gameBoard[2] == 'o'){
-                alert(oPlayer.name + ' wins!');
-            }
+            whichWinner(gameBoard[2]);
         }
     }
 
     if (gameBoard[3] == 'x' || gameBoard[3] == 'o'){
         if (gameBoard[3] == gameBoard[4] && gameBoard[3] == gameBoard[5]){
-            if (gameBoard[3] == 'x'){
-                alert(xPlayer.name + ' wins!');
-            }
-            else if (gameBoard[3] == 'o'){
-                alert(oPlayer.name + ' wins!');
-            }
+            whichWinner(gameBoard[3]);
         }
     }
 
     if (gameBoard[6] == 'x' || gameBoard[6] == 'o'){
         if (gameBoard[6] == gameBoard[7] && gameBoard[6] == gameBoard[8]){
-            if (gameBoard[6] == 'x'){
-                alert(xPlayer.name + ' wins!');
-            }
-            else if (gameBoard[6] == 'o'){
-                alert(oPlayer.name + ' wins!');
-            }
+            whichWinner(gameBoard[6]);
         }
         else if (gameBoard[6] == gameBoard[4] && gameBoard[6] == gameBoard[2]){
-            if (gameBoard[6] == 'x'){
-                alert(xPlayer.name + ' wins!');
-            }
-            else if (gameBoard[6] == 'o'){
-                alert(oPlayer.name + ' wins!');
-            }
+            whichWinner(gameBoard[6]);
         }
     }
 
