@@ -12,9 +12,6 @@ function updatePlayerName(){
     //Create player objects with name
     xPlayer.name = document.querySelector('.xPlayer').value
     oPlayer.name = document.querySelector('.oPlayer').value
-
-    console.log(xPlayer.name);
-    console.log(oPlayer.name);
 }
 
 function whichWinner(marker){
@@ -39,45 +36,24 @@ function whichWinner(marker){
 //Update gameboard array and ui
 function markBoard (tile, marker){
     //Update gameboard array
-    gameBoard.splice(tile,1,marker);
+    gameBoard[tile] = marker;
 
     //Check win
-    if (gameBoard[0] == 'x' || gameBoard[0] == 'o'){
-        if (gameBoard[0] == gameBoard[1] && gameBoard[0] == gameBoard[2]){
-            whichWinner(gameBoard[0]);
-        }
-        else if (gameBoard[0] == gameBoard[3] && gameBoard[0] == gameBoard[6]){
-            whichWinner(gameBoard[0]);
-        }
-        else if (gameBoard[0] == gameBoard[4] && gameBoard[0] == gameBoard[8]){
-            whichWinner(gameBoard[0]);
-        }
-    }
+    const winConditions = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
 
-    if (gameBoard[1] == 'x' || gameBoard[1] == 'o'){
-        if (gameBoard[1] == gameBoard[4] && gameBoard[1] == gameBoard[7]){
-            whichWinner(gameBoard[1]);
-        }
-    }
-
-    if (gameBoard[2] == 'x' || gameBoard[2] == 'o'){
-        if (gameBoard[2] == gameBoard[5] && gameBoard[2] == gameBoard[8]){
-            whichWinner(gameBoard[2]);
-        }
-    }
-
-    if (gameBoard[3] == 'x' || gameBoard[3] == 'o'){
-        if (gameBoard[3] == gameBoard[4] && gameBoard[3] == gameBoard[5]){
-            whichWinner(gameBoard[3]);
-        }
-    }
-
-    if (gameBoard[6] == 'x' || gameBoard[6] == 'o'){
-        if (gameBoard[6] == gameBoard[7] && gameBoard[6] == gameBoard[8]){
-            whichWinner(gameBoard[6]);
-        }
-        else if (gameBoard[6] == gameBoard[4] && gameBoard[6] == gameBoard[2]){
-            whichWinner(gameBoard[6]);
+    for (const condition of winConditions) {
+        if (gameBoard[condition[0]] == marker && gameBoard[condition[1]] == marker && gameBoard[condition[2]] == marker) {
+            whichWinner(marker);
+            break;
         }
     }
 
@@ -103,7 +79,6 @@ for (const tile of tiles){
         if (gameBoard[tile.id] == ''){
             markBoard(tile.id, whoseTurn);
         }
-        console.log(gameBoard);
     });
 }
 
