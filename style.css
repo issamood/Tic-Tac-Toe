@@ -4,6 +4,8 @@ body{
     justify-content: center;
     align-items: center;
     background-color: antiquewhite;
+    font-family: 'Belleza', sans-serif;
+    font-size: 26px;
 }
 
 form {
