@@ -1,43 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicTacToe</title>
-    <script src="javascript.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
+
+    <title>Tic Tac Toe</title>
 </head>
-
 <body>
-    <div class="playerBoardContainer">
-        <form action="dialog" id="playerForm" name="playerForm">
-            <label for="playerXName">Player X Name: </label>
-            <input type="text" id='playerXName' name='playerXName'>
-
-            <label for="playerOName">Player O Name: </label>
-            <input type="text" id="playerOName">
-
-            <input type="radio" id="playerXStarts" name="playerStart">
-            <label for="playerXStarts">Player X starts</label>
-            <input type="radio" id="playerOStarts" name="playerStart">
-            <label for="playerOStarts">Player O starts</label>
-            <button id='startBtn'>Start Game</button>
-        </form>
-
-    </div>
-    <div class="gameBoardContainer">
-        <div class="tile" id="tile1"></div>
-        <div class="tile" id="tile2"></div>
-        <div class="tile" id="tile3"></div>
-        <div class="tile" id="tile4"></div>
-        <div class="tile" id="tile5"></div>
-        <div class="tile" id="tile6"></div>
-        <div class="tile" id="tile7"></div>
-        <div class="tile" id="tile8"></div>
-        <div class="tile" id="tile9"></div>
+    <form action="dialog">
+        <label for="xPlayer">X Player Name: </label>
+        <input type="text" class="xPlayer">
+        <label class='oForm' for="oPlayer">O Player Name: </label>
+        <input type="text" class="oPlayer">
+    </form>
+    <button type="button">Restart</button>
+    <div class="gameBoard">
+        <div class="tile" id="0"></div>
+        <div class="tile" id="1"></div>
+        <div class="tile" id="2"></div>
+        <div class="tile" id="3"></div>
+        <div class="tile" id="4"></div>
+        <div class="tile" id="5"></div>
+        <div class="tile" id="6"></div>
+        <div class="tile" id="7"></div>
+        <div class="tile" id="8"></div>
     </div>
 </body>
-
 </html>
